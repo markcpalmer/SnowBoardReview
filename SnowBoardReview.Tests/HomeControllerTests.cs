@@ -16,7 +16,7 @@ namespace SnowBoardReview.Tests
 
             var result = underTest.Index();
 
-            Assert.Equal("Hello World!", result);
+            Assert.IsType<ViewResult>(result);
         }
     }
 }

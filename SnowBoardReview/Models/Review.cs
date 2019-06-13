@@ -24,6 +24,5 @@ namespace SnowBoardReview.Models
             ProductImage = productImage;
         }
 
-        Models.Review review = new Models.Review("a snowboard", "Board1", "snowboards", 1, "Its pretty good", "FakeIMG");
     }
 }
