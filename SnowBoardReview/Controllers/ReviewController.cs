@@ -6,13 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SnowBoardReview.Controllers
 {
-    public class HomeController: Controller
+    public class ReviewController : Controller
     {
-        public ViewResult Index()
+        public IActionResult Index()
         {
-            
-            
-            
             return View();
         }
     }
