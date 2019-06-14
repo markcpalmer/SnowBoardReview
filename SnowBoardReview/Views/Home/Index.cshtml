@@ -1,8 +1,8 @@
-﻿
+﻿@model SnowBoardReview.Models.Review;
 @{
     Layout = null;
 }
-    @using SnowBoardReview.Controllers;
+@using SnowBoardReview.Controllers;
 
 
 <!DOCTYPE html>
@@ -14,6 +14,8 @@
 </head>
 <body>
     <h1>Hello!</h1>
-    @ReviewRepository.review.ProductImage
+      <p>product description: @Model.ProductDescription</p>
+       <p>Product name: @Model.ProductName</p>
+      <p>Category Name: @Model.CategoryName</p>
 </body>
 </html>
