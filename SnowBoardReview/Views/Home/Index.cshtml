@@ -1,4 +1,4 @@
-﻿@model SnowBoardReview.Models.Review;
+﻿@model IEnumerable<SnowBoardReview.Models.Review>
 @{
     Layout = null;
 }
@@ -13,9 +13,12 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Hello!</h1>
-      <p>product description: @Model.ProductDescription</p>
-       <p>Product name: @Model.ProductName</p>
-      <p>Category Name: @Model.CategoryName</p>
+      @foreach (var review in Model)
+      {
+       <p>Product name: @review.ProductName</p>
+      <p>product description: @review.ProductDescription</p>
+      <p>Category Name: @review.CategoryName</p>
+      <hr />
+      }
 </body>
 </html>

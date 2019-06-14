@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace SnowBoardReview.Repositories
 {
-    interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
-        IEnumerable<T> getAll();
+        IEnumerable<T> GetAll();
         T GetById(int Id);
-
-
-
-
     }
 }
