@@ -11,11 +11,14 @@ namespace SnowBoardReview.Controllers
     public class HomeController: Controller
     {
         //public Review(string productDescription, string productName, string categoryName, int reviewID, string userReview, string productImage)
+        ReviewRepository reviews = new ReviewRepository();
         public ViewResult Index()
         {
-            ReviewRepository reviews = new ReviewRepository();
+            
             var model = reviews.GetAll();
             return View(model);
         }
+
+
     }
 }

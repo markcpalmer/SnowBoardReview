@@ -19,7 +19,7 @@ namespace SnowBoardReview.Controllers
          new Review("a snowboard", "Board4", "snowboards", 4, "Matt and Mark recommend", "FakeIMG"),
         };
 
-        public IEnumerable<Review> GetAll()
+        public IEnumerable<Review> GetAll() 
         {
             return reviewList;
         }
