@@ -13,12 +13,15 @@
     <title>Index</title>
 </head>
 <body>
+        @{ HomeController hc = new HomeController();}
     @foreach (var review in Model)
     {
         <p>Product name: <a href="https://localhost:44307/home/details" target=_blank>@review.ProductName</a></p>
         <p>product description: @review.ProductDescription</p>
         <p>Category Name: @review.CategoryName</p>
         <hr />
+        
+        @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID}, null)
     }
 </body>
 </html>

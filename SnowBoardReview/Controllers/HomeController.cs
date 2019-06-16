@@ -21,7 +21,6 @@ namespace SnowBoardReview.Controllers
 
         public ViewResult Details(int i)
         {
-            i = ReviewID - 1;
             var model = reviews.GetById(i);
             return View(model);
         }

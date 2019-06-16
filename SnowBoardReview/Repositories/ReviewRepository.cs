@@ -27,7 +27,7 @@ namespace SnowBoardReview.Controllers
         public Review GetById(int Id)
         {
             return reviewList.Single(r => r.ReviewID == Id);
-            
+            //return reviewList[Id -1];
 
         }
     }           
