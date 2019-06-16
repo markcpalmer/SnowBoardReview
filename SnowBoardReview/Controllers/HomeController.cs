@@ -19,9 +19,9 @@ namespace SnowBoardReview.Controllers
             return View(model);
         }
 
-        public ViewResult Details(int i)
+        public ViewResult Details(int id)
         {
-            var model = reviews.GetById(i);
+            var model = reviews.GetById(id);
             return View(model);
         }
 

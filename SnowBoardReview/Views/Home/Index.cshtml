@@ -1,27 +1,16 @@
 ﻿@model IEnumerable<SnowBoardReview.Models.Review>
 @{
-    Layout = null;
+    Layout = "_layout";
 }
 @using SnowBoardReview.Controllers;
 
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-        @{ HomeController hc = new HomeController();}
     @foreach (var review in Model)
     {
-        <p>Product name: <a href="https://localhost:44307/home/details" target=_blank>@review.ProductName</a></p>
+        <p>Product name: @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID }, null)</p>
         <p>product description: @review.ProductDescription</p>
         <p>Category Name: @review.CategoryName</p>
         <hr />
-        
-        @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID}, null)
     }
-</body>
-</html>
+
