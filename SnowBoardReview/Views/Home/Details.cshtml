@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SnowBoardReview.Models.Review>
+﻿@model SnowBoardReview.Models.Review
 @{
     Layout = null;
 }
@@ -6,11 +6,17 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head>: 
     <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <title>Reviews</title>
 </head>
 <body>
-    <h1>HI</h1>
+        <h1>HI</h1>
+    @Model.ReviewID
+    @Model.ProductName
+    @Model.ProductDescription
+    @Model.UserReview
+
+    
 </body>
 </html>
