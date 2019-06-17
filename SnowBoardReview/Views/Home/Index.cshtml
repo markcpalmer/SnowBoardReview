@@ -6,11 +6,11 @@
 
 
 
-    @foreach (var review in Model)
-    {
-        <p>Product name: @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID }, null)</p>
-        <p>product description: @review.ProductDescription</p>
-        <p>Category Name: @review.CategoryName</p>
-        <hr />
-    }
+@foreach (var review in Model)
+{
+<p><h2><strong> @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID }, null)</strong></h2></p>
+    <p>Product Description: @review.ProductDescription</p>
+    <p>Category Name: @review.CategoryName</p>
+    <hr />
+}
 
