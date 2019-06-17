@@ -13,8 +13,6 @@ namespace SnowBoardReview.Tests
         {
             ReviewRepository rv = new ReviewRepository();
             IEnumerable<Review> revs = rv.GetAll();
-
-
         }
     }
 }
