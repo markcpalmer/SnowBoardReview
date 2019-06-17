@@ -1,11 +1,18 @@
-﻿body{
+﻿*{
+    min-width: 200px;
+}
+
+body {
     background-color: lightgray;
     font-family: 'Microsoft Sans Serif';
-   
-    
+    margin: 0 10vw;
 }
-body{margin: 0 10vw;}
 
-#foo{
-    font-size: 72px;
+
+h1{
+    text-align: center;
+}
+
+box p{
+    width: 50vw;
 }
