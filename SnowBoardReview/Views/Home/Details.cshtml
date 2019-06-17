@@ -1,16 +1,15 @@
-﻿@model SnowBoardReview.Models.Review
+﻿
+@model SnowBoardReview.Models.Review
 @{
-    Layout = "_layout";
+    Layout = "_Layout";
 }
 @using SnowBoardReview.Controllers;
 
 
-<box>
-@Model.ReviewID
-@Model.ProductName
-@Model.ProductDescription
-@Model.UserReview;
-</box>
 
+<p>@Model.ProductDescription</p>
+<p>@Model.UserReview</p>
 
+<img src="@Model.ProductImage" alt="board1" />
+<p><a href="~/Home/Index">Product Catalog</a></p>
 

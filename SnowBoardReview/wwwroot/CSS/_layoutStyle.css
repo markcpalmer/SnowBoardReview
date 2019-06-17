@@ -1,5 +1,11 @@
-﻿* {
+﻿body{
     background-color: lightgray;
     font-family: 'Microsoft Sans Serif';
-    color: aqua;
+   
+    
+}
+body{margin: 0 10vw;}
+
+#foo{
+    font-size: 72px;
 }
