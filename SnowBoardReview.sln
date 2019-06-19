@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnowBoardReview", "SnowBoardReview\SnowBoardReview.csproj", "{297D8791-B221-4F99-A05A-4940B764CF2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowBoardReview.Tests", "SnowBoardReview.Tests\SnowBoardReview.Tests.csproj", "{BC91F0D5-493F-4483-B517-EDD71678C04B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnowBoardReview.Tests", "SnowBoardReview.Tests\SnowBoardReview.Tests.csproj", "{BC91F0D5-493F-4483-B517-EDD71678C04B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
