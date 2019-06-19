@@ -14,6 +14,8 @@ namespace SnowBoardReview.Models
         public string UserReview { get; set; }
         public string ProductImage { get; set; }
 
+        public virtual List<SnowboardReview> SnowboardReviews { get; set; }
+
         public Review(string productDescription, string productName, string categoryName, int reviewID, string userReview, string productImage)
         {
             ProductDescription = productDescription;

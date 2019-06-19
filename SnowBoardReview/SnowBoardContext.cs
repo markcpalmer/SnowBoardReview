@@ -9,13 +9,14 @@ namespace SnowBoardReview
 {
     public class SnowBoardContext : DbContext
     {
+
         public DbSet<Snowboard> Snowboards { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server = (localdb)\\mssqllocaldb; Database = SnowBoardTesting; Trusted_Connection = True";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=SnowBoardTesting;Trusted_Connection=True";
 
-            optionsBuilder.UseSqlServer(connectionString)
-                        .UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer(connectionString);
+                      //  .UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
 

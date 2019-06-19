@@ -17,10 +17,8 @@ namespace SnowBoardReview.Models
 
         public virtual List<SnowboardReview> SnowboardReviews { get; set; }
 
-
-        public Snowboard(int id, string modelDescription, string modelName, string productImage)
+        public Snowboard(string modelDescription, string modelName, string productImage)
         {
-            ID = id;
             ModelDescription = modelDescription;
             ModelName = modelName;
             ProductImage = productImage;
