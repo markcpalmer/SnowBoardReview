@@ -11,16 +11,18 @@ namespace SnowBoardReview.Models
         public string ModelDescription { get; set; }
         public string ModelName { get; set; }
         public string BrandName { get; set; }
-        //public int ReviewID { get; set; }
-        //public string UserReview { get; set; }
         public string ProductImage { get; set; }
+        
+        public SnowboardBrand SnowboardBrand { get; set; }
 
-        public Snowboard(int id, string modelDescription, string modelName, string brandName, string productImage)
+        public virtual List<SnowboardReview> SnowboardReviews { get; set; }
+
+
+        public Snowboard(int id, string modelDescription, string modelName, string productImage)
         {
             ID = id;
             ModelDescription = modelDescription;
             ModelName = modelName;
-            BrandName = brandName;
             ProductImage = productImage;
         }
     }
