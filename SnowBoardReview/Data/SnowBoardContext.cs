@@ -35,6 +35,24 @@ namespace SnowBoardReview
                     ProductImage = "Shakespeare"
                 });
 
+            modelBuilder.Entity<Snowboard>().HasData(
+                new Snowboard
+                {
+                    ID = 2,
+                    ModelDescription = "blue",
+                    ModelName = "x200",
+                    ProductImage = "tree"
+                });
+
+            modelBuilder.Entity<Snowboard>().HasData(
+                new Snowboard
+                {
+                    ID = 3,
+                    ModelDescription = "red",
+                    ModelName = "W40",
+                    ProductImage = "water"
+                });
+
             modelBuilder.Entity<Review>().HasData(
                  new Review
                  {
@@ -46,6 +64,48 @@ namespace SnowBoardReview
                      ProductImage = "Pretty",
 
                  });
+
+            modelBuilder.Entity<Review>().HasData(
+               new Review
+               {
+                   ReviewID = 2,
+                   ProductDescription = "luis",
+                   ProductName = "diablo",
+                   CategoryName = " latino board",
+                   UserReview = "hated it",
+                   ProductImage = "ok",
+
+               }); modelBuilder.Entity<Review>().HasData(
+                new Review
+                {
+                    ReviewID = 3,
+                    ProductDescription = "matt",
+                    ProductName = "polar bear",
+                    CategoryName = " bear board",
+                    UserReview = "Decent yo",
+                    ProductImage = "decent still",
+
+                });
+
+            modelBuilder.Entity<SnowboardReview>().HasData(
+               new SnowboardReview
+               {
+                   ID = 1,
+                   ReviewID = 1,
+                   SnowboardID = 1,
+               }); modelBuilder.Entity<SnowboardReview>().HasData(
+                new SnowboardReview
+                {
+                    ID = 2,
+                    ReviewID =2,
+                    SnowboardID = 3,
+                }); modelBuilder.Entity<SnowboardReview>().HasData(
+                new SnowboardReview
+                {
+                    ID = 3,
+                    ReviewID = 3,
+                    SnowboardID = 2,
+                });
         }
     }
 }

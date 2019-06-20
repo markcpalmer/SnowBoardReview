@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnowBoardReview;
 
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    partial class SnowBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190620145323_SnowboardReviewMigration")]
+    partial class SnowboardReviewMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,9 +41,7 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Reviews");
 
                     b.HasData(
-                        new { ReviewID = 1, CategoryName = " cool board", ProductDescription = "mark", ProductImage = "Pretty", ProductName = "take 2", UserReview = "This is cool" },
-                        new { ReviewID = 2, CategoryName = " latino board", ProductDescription = "luis", ProductImage = "ok", ProductName = "diablo", UserReview = "hated it" },
-                        new { ReviewID = 3, CategoryName = " bear board", ProductDescription = "matt", ProductImage = "decent still", ProductName = "polar bear", UserReview = "Decent yo" }
+                        new { ReviewID = 1, CategoryName = " cool board", ProductDescription = "mark", ProductImage = "Pretty", ProductName = "take 2", UserReview = "This is cool" }
                     );
                 });
 
@@ -64,9 +64,7 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare" },
-                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree" },
-                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water" }
+                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare" }
                     );
                 });
 
@@ -107,9 +105,7 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("SnowboardReviews");
 
                     b.HasData(
-                        new { ID = 1, ReviewID = 1, SnowboardID = 1 },
-                        new { ID = 2, ReviewID = 2, SnowboardID = 3 },
-                        new { ID = 3, ReviewID = 3, SnowboardID = 2 }
+                        new { ID = 1, ReviewID = 1, SnowboardID = 1 }
                     );
                 });
 
