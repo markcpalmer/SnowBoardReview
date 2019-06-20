@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnowBoardReview;
 
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    partial class SnowBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190620141005_SeedMigration")]
+    partial class SeedMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,10 +39,6 @@ namespace SnowBoardReview.Migrations
                     b.HasKey("ReviewID");
 
                     b.ToTable("Reviews");
-
-                    b.HasData(
-                        new { ReviewID = 1, CategoryName = " cool board", ProductDescription = "mark", ProductImage = "Pretty", ProductName = "take 2", UserReview = "This is cool" }
-                    );
                 });
 
             modelBuilder.Entity("SnowBoardReview.Models.Snowboard", b =>
