@@ -106,6 +106,19 @@ namespace SnowBoardReview
                     ReviewID = 3,
                     SnowboardID = 2,
                 });
+
+
         }
+              public IEnumerable<Snowboard> GetAll()
+              {
+                return Snowboards;
+              }
+
+        public Snowboard GetById(int Id)
+        {
+            return Snowboards.Single(r => r.ID == Id);
+
+        }
+
     }
 }
