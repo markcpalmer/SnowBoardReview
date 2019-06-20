@@ -24,5 +24,17 @@ namespace SnowBoardReview
             base.OnConfiguring(optionsBuilder);
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Snowboard>().HasData(
+                new Snowboard
+                {
+                    ID = 1,
+                    ModelDescription = "",
+                    ModelName = "William",
+                    ProductImage  = "Shakespeare"
+                }
+            );
+        }
     }
 }

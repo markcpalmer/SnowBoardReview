@@ -23,5 +23,9 @@ namespace SnowBoardReview.Models
             ModelName = modelName;
             ProductImage = productImage;
         }
+        public Snowboard()
+        {
+
+        }
     }
 }
