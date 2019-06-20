@@ -11,6 +11,7 @@ namespace SnowBoardReview.Models
 
         public Snowboard Snowboard { get; set; }
         public int SnowboardID { get; set; }
+
         public Review Review { get; set; }
         public int ReviewID { get; set; }
     }

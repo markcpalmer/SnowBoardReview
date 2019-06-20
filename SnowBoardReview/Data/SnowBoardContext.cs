@@ -9,8 +9,11 @@ namespace SnowBoardReview
 {
     public class SnowBoardContext : DbContext
     {
-
+        public DbSet<Review> Reviews { get; set; }
         public DbSet<Snowboard> Snowboards { get; set; }
+        public DbSet<SnowboardBrand> SnowboardBrands { get; set; }
+        public DbSet<SnowboardReview> SnowboardReviews { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=SnowBoardTesting;Trusted_Connection=True";
