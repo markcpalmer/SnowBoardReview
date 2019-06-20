@@ -32,9 +32,20 @@ namespace SnowBoardReview
                     ID = 1,
                     ModelDescription = "",
                     ModelName = "William",
-                    ProductImage  = "Shakespeare"
-                }
-            );
+                    ProductImage = "Shakespeare"
+                });
+
+            modelBuilder.Entity<Review>().HasData(
+                 new Review
+                 {
+                     ReviewID = 1,
+                     ProductDescription = "mark",
+                     ProductName = "take 2",
+                     CategoryName = " cool board",
+                     UserReview = "This is cool",
+                     ProductImage = "Pretty",
+
+                 });
         }
     }
 }

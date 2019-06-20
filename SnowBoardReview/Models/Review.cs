@@ -26,5 +26,10 @@ namespace SnowBoardReview.Models
             ProductImage = productImage;
         }
 
+        public Review()
+        {
+
+        }
+
     }
 }
