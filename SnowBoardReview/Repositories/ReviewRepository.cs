@@ -6,12 +6,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace SnowBoardReview.Controllers
+namespace SnowBoardReview.Repositories
 {
 
     public class ReviewRepository : IRepository<Review>
     {
-        SnowBoardContext db = new SnowBoardContext();
+
+        private SnowBoardContext db;
+
+        public ReviewRepository(SnowBoardContext db)
+        {
+            this.db = db;
+        }
 
         public IEnumerable<Review> GetAll() 
         {

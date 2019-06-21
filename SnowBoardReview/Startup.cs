@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using SnowBoardReview.Models;
+using SnowBoardReview.Repositories;
 
 namespace SnowBoardReview
 {
@@ -16,6 +18,11 @@ namespace SnowBoardReview
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<SnowBoardContext>();
+            services.AddScoped<IRepository<Review>, ReviewRepository>();
+            services.AddScoped<IRepository<SnowboardReview>, SnowboardReviewRepository>();
+            services.AddScoped<IRepository<Snowboard>, SnowboardRepository>();
+            services.AddScoped<IRepository<SnowboardBrand>, SnowboardBrandRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -22,7 +22,6 @@ namespace SnowBoardReview
                       //  .UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -84,7 +83,6 @@ namespace SnowBoardReview
                     CategoryName = " bear board",
                     UserReview = "Decent yo",
                     ProductImage = "decent still",
-
                 });
 
             modelBuilder.Entity<SnowboardReview>().HasData(
