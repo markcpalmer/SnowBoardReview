@@ -9,8 +9,8 @@ using SnowBoardReview;
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    [Migration("20190620212636_MattsMigro")]
-    partial class MattsMigro
+    [Migration("20190621181930_PotentialBrandFix")]
+    partial class PotentialBrandFix
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,14 +61,18 @@ namespace SnowBoardReview.Migrations
 
                     b.Property<string>("ProductImage");
 
+                    b.Property<int>("SnowboardBrandID");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("SnowboardBrandID");
 
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare" },
-                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree" },
-                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water" }
+                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare", SnowboardBrandID = 1 },
+                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree", SnowboardBrandID = 2 },
+                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water", SnowboardBrandID = 2 }
                     );
                 });
 
@@ -80,14 +84,15 @@ namespace SnowBoardReview.Migrations
 
                     b.Property<string>("Brand");
 
-                    b.Property<int>("SnowboardID");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("SnowboardID")
-                        .IsUnique();
-
                     b.ToTable("SnowboardBrands");
+
+                    b.HasData(
+                        new { ID = 1, Brand = "Burton" },
+                        new { ID = 2, Brand = "Mark's Brand" },
+                        new { ID = 3, Brand = "K2" }
+                    );
                 });
 
             modelBuilder.Entity("SnowBoardReview.Models.SnowboardReview", b =>
@@ -115,11 +120,11 @@ namespace SnowBoardReview.Migrations
                     );
                 });
 
-            modelBuilder.Entity("SnowBoardReview.Models.SnowboardBrand", b =>
+            modelBuilder.Entity("SnowBoardReview.Models.Snowboard", b =>
                 {
-                    b.HasOne("SnowBoardReview.Models.Snowboard")
-                        .WithOne("SnowboardBrand")
-                        .HasForeignKey("SnowBoardReview.Models.SnowboardBrand", "SnowboardID")
+                    b.HasOne("SnowBoardReview.Models.SnowboardBrand", "SnowboardBrand")
+                        .WithMany("Snowboards")
+                        .HasForeignKey("SnowboardBrandID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
