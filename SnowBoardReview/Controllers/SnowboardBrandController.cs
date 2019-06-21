@@ -21,5 +21,11 @@ namespace SnowBoardReview.Controllers
             var model = brandRepo.GetAll();
             return View(model);
         }
+
+        public ViewResult Details(int id)
+        {
+            var model = brandRepo.GetById(id);
+            return View(model);
+        }
     }
 }

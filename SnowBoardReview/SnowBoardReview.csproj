@@ -29,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\SnowboardReview\" />
-    <Folder Include="Views\Review\" />
-    <Folder Include="Views\Snowboard\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

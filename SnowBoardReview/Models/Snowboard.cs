@@ -10,7 +10,6 @@ namespace SnowBoardReview.Models
         public int ID { get; set; }
         public string ModelDescription { get; set; }
         public string ModelName { get; set; }
-        public string BrandName { get; set; }
         public string ProductImage { get; set; }
 
         public SnowboardBrand SnowboardBrand { get; set; }
