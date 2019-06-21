@@ -12,8 +12,9 @@ namespace SnowBoardReview.Models
         public string ModelName { get; set; }
         public string BrandName { get; set; }
         public string ProductImage { get; set; }
-        
+
         public SnowboardBrand SnowboardBrand { get; set; }
+        public int SnowboardBrandID { get; set; }
 
         public virtual List<SnowboardReview> SnowboardReviews { get; set; }
 

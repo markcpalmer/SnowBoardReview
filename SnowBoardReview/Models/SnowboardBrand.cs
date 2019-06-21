@@ -10,6 +10,6 @@ namespace SnowBoardReview.Models
         public int ID { get; set; }
         public string Brand { get; set; }
 
-        public int SnowboardID { get; set; }
+        public virtual List<Snowboard> Snowboards { get; set; }
     }
 }
