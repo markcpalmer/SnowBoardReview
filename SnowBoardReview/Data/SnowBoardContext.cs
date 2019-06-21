@@ -32,18 +32,14 @@ namespace SnowBoardReview
                     ModelDescription = "",
                     ModelName = "William",
                     ProductImage = "Shakespeare"
-                });
-
-            modelBuilder.Entity<Snowboard>().HasData(
+                },
                 new Snowboard
                 {
                     ID = 2,
                     ModelDescription = "blue",
                     ModelName = "x200",
                     ProductImage = "tree"
-                });
-
-            modelBuilder.Entity<Snowboard>().HasData(
+                },
                 new Snowboard
                 {
                     ID = 3,
@@ -62,9 +58,7 @@ namespace SnowBoardReview
                      UserReview = "This is cool",
                      ProductImage = "Pretty",
 
-                 });
-
-            modelBuilder.Entity<Review>().HasData(
+                 },
                new Review
                {
                    ReviewID = 2,
@@ -74,7 +68,7 @@ namespace SnowBoardReview
                    UserReview = "hated it",
                    ProductImage = "ok",
 
-               }); modelBuilder.Entity<Review>().HasData(
+               },
                 new Review
                 {
                     ReviewID = 3,
@@ -91,13 +85,13 @@ namespace SnowBoardReview
                    ID = 1,
                    ReviewID = 1,
                    SnowboardID = 1,
-               }); modelBuilder.Entity<SnowboardReview>().HasData(
+               },
                 new SnowboardReview
                 {
                     ID = 2,
                     ReviewID =2,
                     SnowboardID = 3,
-                }); modelBuilder.Entity<SnowboardReview>().HasData(
+                },
                 new SnowboardReview
                 {
                     ID = 3,
@@ -105,18 +99,27 @@ namespace SnowBoardReview
                     SnowboardID = 2,
                 });
 
+            modelBuilder.Entity<SnowboardBrand>().HasData(
+               new SnowboardBrand
+               {
+                   ID = 1,
+                   Brand = "Burton",
+                   SnowboardID = 3
+               },
+               new SnowboardBrand
+               {
+                   ID = 2,
+                   Brand = "Mark's Brand",
+                   SnowboardID = 3
 
+               },
+               new SnowboardBrand
+               {
+                   ID = 3,
+                   Brand = "K2",
+                   SnowboardID = 3
+
+               });
         }
-              public IEnumerable<Snowboard> GetAll()
-              {
-                return Snowboards;
-              }
-
-        public Snowboard GetById(int Id)
-        {
-            return Snowboards.Single(r => r.ID == Id);
-
-        }
-
     }
 }

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<SnowBoardReview.Models.SnowboardBrand>
+@{
+    Layout = "_layout";
+}
+@using SnowBoardReview.Controllers;
+
+@foreach (var brand in Model)
+{
+<p>@brand.Brand</p>
+}

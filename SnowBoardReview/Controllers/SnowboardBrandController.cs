@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SnowBoardReview.Models;
+using SnowBoardReview.Repositories;
 
 namespace SnowBoardReview.Controllers
 {
     public class SnowboardBrandController : Controller
     {
-        public IActionResult Index()
+        IRepository<SnowboardBrand> brandRepo;
+        public SnowboardBrandController(IRepository<SnowboardBrand> brandRepo)
         {
-            return View();
+            this.brandRepo = brandRepo;
+        }
+
+        public ViewResult Index()
+        {
+            var model = brandRepo.GetAll();
+            return View(model);
         }
     }
 }
