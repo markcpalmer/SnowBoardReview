@@ -21,5 +21,12 @@ namespace SnowBoardReview.Controllers
             var model = reviewRepo.GetAll();
             return View(model);
         }
+
+        public ViewResult Details(int id)
+        {
+            var model = reviewRepo.GetById(id);
+            return View(model);
+        }
+
     }
 }
