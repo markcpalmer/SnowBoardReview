@@ -19,14 +19,14 @@ namespace SnowBoardReview.Tests
             Assert.IsType<ViewResult>(result);
         }
 
-        [Fact]
-        public void Details_Returns_View()
-        {
-            var undertest = new HomeController();
+        //[Fact]
+        //public void Details_Returns_View()
+        //{
+        //    var undertest = new HomeController();
 
-            var result = undertest.Details(1);
+        //    var result = undertest.Details(1);
 
-            Assert.IsType<ViewResult>(result);
-        }
+        //    Assert.IsType<ViewResult>(result);
+        //}
     }
 }

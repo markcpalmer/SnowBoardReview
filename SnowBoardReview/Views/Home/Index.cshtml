@@ -4,14 +4,13 @@
 }
 @using SnowBoardReview.Controllers;
 
-
 <h1>Product Catalog</h1>
 
-@foreach (var review in Model)
+@foreach (var revs in Model)
 {
-<p><h2><strong> @Html.ActionLink(@review.ProductName, "Details", "Home", new { id = @review.ReviewID }, null)</strong></h2></p>
-    <p>Product Description: @review.ProductDescription</p>
-    <p>Category Name: @review.CategoryName</p>
-    <hr />
+    if (revs.ReviewID == 3)
+    {
+<p>@revs.ProductName</p>
+    }
 }
 
