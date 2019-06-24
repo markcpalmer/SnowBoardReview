@@ -30,10 +30,10 @@ namespace SnowBoardReview.Controllers
             return View(model);
         }
 
-        ////public ViewResult GetByBrand(int Id)
-        //{
-        //    var model = snowboardRepo.
-        //    return db.SnowboardBrand.Single(r => r.SnowBoardBrandID == Id);
-        //}
+        public ViewResult Brand(int Id)
+        {
+            var model = snowboardRepo.GetByBrandId(Id);
+           return View(model);
+        }
     }
 }

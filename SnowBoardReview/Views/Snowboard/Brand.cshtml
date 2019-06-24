@@ -1,0 +1,15 @@
+﻿@model IEnumerable<SnowBoardReview.Models.Snowboard>
+
+@{
+    ViewData["Title"] = "Brand";
+    Layout = "_layout";
+}
+
+@foreach (var brand in Model)
+{
+    @brand.ModelName
+}
+
+    <h2>Brand</h2>
+
+

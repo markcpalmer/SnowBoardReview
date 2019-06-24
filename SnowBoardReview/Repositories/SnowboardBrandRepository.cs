@@ -21,10 +21,6 @@ namespace SnowBoardReview.Repositories
                 return db.SnowboardBrands;
             }
 
-        public SnowboardBrand GetByBrandId(int Id)
-        {
-            throw new NotImplementedException();
-        }
 
         public SnowboardBrand GetById(int Id)
             {

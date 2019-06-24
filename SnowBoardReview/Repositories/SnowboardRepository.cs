@@ -25,10 +25,18 @@ namespace SnowBoardReview.Repositories
             return db.Snowboards.Single(r => r.ID == Id);
         }
 
-        public Snowboard GetByBrandId(int Id)
+        public IEnumerable<Snowboard> GetByBrandId(int Id)
         {
-            return db.Snowboards.Single(r => r.SnowboardBrandID == Id);
+            return db.Snowboards.Where(r => r.SnowboardBrandID == Id);
         }
+
+        public void foo()
+        {
+
+        }
+
+
+        
 
     }
 }
