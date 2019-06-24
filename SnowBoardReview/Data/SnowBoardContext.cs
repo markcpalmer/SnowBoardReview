@@ -107,17 +107,20 @@ namespace SnowBoardReview
                {
                    ID = 1,
                    Brand = "Burton",
+                   BrandImage = "/images/burton.jpeg"
                },
                new SnowboardBrand
                {
                    ID = 2,
                    Brand = "Mark's Brand",
+                   BrandImage = "/images/Marksboard.png"
 
                },
                new SnowboardBrand
                {
                    ID = 3,
                    Brand = "K2",
+                   BrandImage = "/images/K2Logo.png"
                });
         }
     }
