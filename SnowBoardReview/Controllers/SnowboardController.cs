@@ -29,5 +29,11 @@ namespace SnowBoardReview.Controllers
             var model = snowboardRepo.GetById(id);
             return View(model);
         }
+
+        ////public ViewResult GetByBrand(int Id)
+        //{
+        //    var model = snowboardRepo.
+        //    return db.SnowboardBrand.Single(r => r.SnowBoardBrandID == Id);
+        //}
     }
 }

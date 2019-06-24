@@ -24,5 +24,11 @@ namespace SnowBoardReview.Repositories
         {
             return db.Snowboards.Single(r => r.ID == Id);
         }
+
+        public Snowboard GetByBrandId(int Id)
+        {
+            return db.Snowboards.Single(r => r.SnowboardBrandID == Id);
+        }
+
     }
 }

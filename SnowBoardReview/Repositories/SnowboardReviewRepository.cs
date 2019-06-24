@@ -20,6 +20,11 @@ namespace SnowBoardReview.Repositories
             return db.SnowboardReviews;
         }
 
+        public SnowboardReview GetByBrandId(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
         public SnowboardReview GetById(int Id)
         {
             return db.SnowboardReviews.Single(r => r.ID == Id);

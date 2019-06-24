@@ -24,9 +24,19 @@ namespace SnowBoardReview.Repositories
             return db.Reviews;
         }
 
+        public Review GetByBrandId(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Review GetById(int Id)
         {
             return db.Reviews.Single(r => r.ReviewID == Id);
         }
-    }           
+
+
+    }    
+
+
+    
 }

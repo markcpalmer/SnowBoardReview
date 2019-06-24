@@ -6,7 +6,8 @@
 
 @foreach (var brand in Model)
 {
-<img src="@brand.BrandImage" alt="Brand Images" />
+
+<a href="/brand/details/@brand.ID"><img src="@brand.BrandImage" alt="Brand Images" /></a>
 <p>@brand.Brand</p>
     
 }

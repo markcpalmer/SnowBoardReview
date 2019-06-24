@@ -21,9 +21,17 @@ namespace SnowBoardReview.Repositories
                 return db.SnowboardBrands;
             }
 
-            public SnowboardBrand GetById(int Id)
+        public SnowboardBrand GetByBrandId(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SnowboardBrand GetById(int Id)
             {
                 return db.SnowboardBrands.Single(r => r.ID == Id);
             }
-        }
+
+        
+    }
+            
 }
