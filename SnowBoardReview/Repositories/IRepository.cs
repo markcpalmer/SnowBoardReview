@@ -9,7 +9,10 @@ namespace SnowBoardReview.Repositories
     {
         IEnumerable<T> GetAll();
         T GetById(int Id);
-        //IEnumerable<T> GetByBrandId(int Id);
-
+        IEnumerable<T> GetByBrandId(int Id);
     }
+
+        
+        
+    
 }

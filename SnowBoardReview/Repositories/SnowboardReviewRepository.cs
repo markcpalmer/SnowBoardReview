@@ -20,6 +20,10 @@ namespace SnowBoardReview.Repositories
             return db.SnowboardReviews;
         }
 
+        public IEnumerable<SnowboardReview> GetByBrandId(int Id)
+        {
+            throw new NotImplementedException();
+        }
 
         public SnowboardReview GetById(int Id)
         {
