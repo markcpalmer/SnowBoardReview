@@ -18,8 +18,8 @@ namespace SnowBoardReview
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=SnowBoardTesting;Trusted_Connection=True";
 
-            optionsBuilder.UseSqlServer(connectionString);
-                      //  .UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer(connectionString)
+                        .UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
         }
@@ -55,31 +55,31 @@ namespace SnowBoardReview
                  new Review
                  {
                      ReviewID = 1,
-                     ProductDescription = "mark",
-                     ProductName = "take 2",
+                    // ProductDescription = "mark",
+                    // ProductName = "take 2",
                      CategoryName = " cool board",
                      UserReview = "This is cool",
-                     ProductImage = "Pretty",
+                     //ProductImage = "Pretty",
 
                  },
                new Review
                {
                    ReviewID = 2,
-                   ProductDescription = "luis",
-                   ProductName = "diablo",
+                 //  ProductDescription = "luis",
+                  // ProductName = "diablo",
                    CategoryName = " latino board",
                    UserReview = "hated it",
-                   ProductImage = "ok",
+                  // ProductImage = "ok",
 
                },
                 new Review
                 {
                     ReviewID = 3,
-                    ProductDescription = "matt",
-                    ProductName = "polar bear",
+                   // ProductDescription = "matt",
+                   // ProductName = "polar bear",
                     CategoryName = " bear board",
                     UserReview = "Decent yo",
-                    ProductImage = "decent still",
+                   // ProductImage = "decent still",
                 });
 
             modelBuilder.Entity<SnowboardReview>().HasData(
