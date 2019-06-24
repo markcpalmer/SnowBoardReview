@@ -15,6 +15,11 @@ namespace SnowBoardReview.Repositories
             this.db = db;
         }
 
+        public void Create(SnowboardReview obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<SnowboardReview> GetAll()
         {
             return db.SnowboardReviews;

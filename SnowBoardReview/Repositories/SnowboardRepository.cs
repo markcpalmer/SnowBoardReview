@@ -29,5 +29,10 @@ namespace SnowBoardReview.Repositories
         {
             return db.Snowboards.Where(r => r.SnowboardBrandID == Id);
         }
+
+        public void Create(Snowboard obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

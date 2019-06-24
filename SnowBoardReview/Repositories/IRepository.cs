@@ -10,9 +10,14 @@ namespace SnowBoardReview.Repositories
         IEnumerable<T> GetAll();
         T GetById(int Id);
         IEnumerable<T> GetByBrandId(int Id);
+        void Create(T obj);
+
+        //void Delete(T obj);
+
+        //void Update(T obj);
     }
 
-        
-        
-    
+
+
+
 }

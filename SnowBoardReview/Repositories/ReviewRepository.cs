@@ -34,6 +34,11 @@ namespace SnowBoardReview.Repositories
             return db.Reviews.Single(r => r.ReviewID == Id);
         }
 
+        public void Create(Review review)
+        {
+            db.Reviews.Add(review);
+            db.SaveChanges();
+        }
 
     }    
 
