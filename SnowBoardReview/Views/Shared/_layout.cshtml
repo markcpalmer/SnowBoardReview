@@ -3,10 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="~/CSS/_layoutStyle.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+    <link href="~/CSS/_layoutStyle.css" rel="stylesheet" />
     @RenderSection("styles", false)
 </head>
-<body>
-    @RenderBody()
+<header>
+    <body>
+        <nav>
+            <ul>
+                <a href="/snowboardbrand/Index"><li class="navbutton">Home</li></a>
+                <a href="/snowboardbrand/Index"><li class="navbutton">Brands</li></a>
+                <a href="/snowboardbrand/Index"><li class="navbutton">Snowboards</li></a>
+                <a href="/snowboardbrand/Index"><li class="navbutton">Add Review</li></a>
+            </ul>
+        </nav>
+</header>
+@RenderBody()
+<footer>
+    <i>A Team-X Production &copy;2019</i>
+</footer>
 </body>
 </html>
