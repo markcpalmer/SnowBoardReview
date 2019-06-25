@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnowBoardReview;
 
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    partial class SnowBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190625155838_AddedDescriptions")]
+    partial class AddedDescriptions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +66,7 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "All Mountain, Freestyle- Light, short and flexible", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.jpg", SnowboardBrandID = 1 },
+                        new { ID = 1, ModelDescription = "All Mountain, Freestyle- Light, short and flexible", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.png", SnowboardBrandID = 1 },
                         new { ID = 2, ModelDescription = "Freeride, Freestyle- Ideal for backcountry riding.", ModelName = "x200", ProductImage = "/images/MarkBrandX200.png", SnowboardBrandID = 2 },
                         new { ID = 3, ModelDescription = "Splitboard- Split in half for backcountry climbing.", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 }
                     );

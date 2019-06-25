@@ -28,15 +28,15 @@ namespace SnowBoardReview
                 new Snowboard
                 {
                     ID = 1,
-                    ModelDescription = "",
+                    ModelDescription = "All Mountain, Freestyle- Light, short and flexible",
                     ModelName = "Kaleidoscope",
-                    ProductImage = "/images/BurtonKaleidoscope.png",
+                    ProductImage = "/images/BurtonKaleidoscope.jpg",
                     SnowboardBrandID = 1,
                 },
                 new Snowboard
                 {
                     ID = 2,
-                    ModelDescription = "blue",
+                    ModelDescription = "Freeride, Freestyle- Ideal for backcountry riding.",
                     ModelName = "x200",
                     ProductImage = "/images/MarkBrandX200.png",
                     SnowboardBrandID = 2,
@@ -44,7 +44,7 @@ namespace SnowBoardReview
                 new Snowboard
                 {
                     ID = 3,
-                    ModelDescription = "red",
+                    ModelDescription = "Splitboard- Split in half for backcountry climbing.",
                     ModelName = "W40",
                     ProductImage = "/images/MarkBrandW40.jpg",
                     SnowboardBrandID=2,
