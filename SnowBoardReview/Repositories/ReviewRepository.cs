@@ -26,7 +26,7 @@ namespace SnowBoardReview.Repositories
 
         public IEnumerable<Review> GetByBrandId(int Id)
         {
-            throw new NotImplementedException();
+            return db.Reviews.Where(r => r.SnowboardID == Id);
         }
 
         public Review GetById(int Id)
