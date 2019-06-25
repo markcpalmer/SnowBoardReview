@@ -9,8 +9,8 @@ using SnowBoardReview;
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    [Migration("20190625155323_UpdatedViewPaths")]
-    partial class UpdatedViewPaths
+    [Migration("20190625185652_K2BrandPhoto")]
+    partial class K2BrandPhoto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,9 +66,9 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.png", SnowboardBrandID = 1 },
-                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "/images/MarkBrandX200.png", SnowboardBrandID = 2 },
-                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 }
+                        new { ID = 1, ModelDescription = "All Mountain, Freestyle- Light, short and flexible", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.jpg", SnowboardBrandID = 1 },
+                        new { ID = 2, ModelDescription = "Freeride, Freestyle- Ideal for backcountry riding.", ModelName = "x200", ProductImage = "/images/MarkBrandX200.png", SnowboardBrandID = 2 },
+                        new { ID = 3, ModelDescription = "Splitboard- Split in half for backcountry climbing.", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 }
                     );
                 });
 
@@ -89,7 +89,7 @@ namespace SnowBoardReview.Migrations
                     b.HasData(
                         new { ID = 1, Brand = "Burton", BrandImage = "/images/burton.jpeg" },
                         new { ID = 2, Brand = "Mark's Brand", BrandImage = "/images/BPowerLogo.png" },
-                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2Logo.png" }
+                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2_1.png" }
                     );
                 });
 

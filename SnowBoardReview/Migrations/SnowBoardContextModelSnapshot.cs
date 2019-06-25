@@ -87,7 +87,7 @@ namespace SnowBoardReview.Migrations
                     b.HasData(
                         new { ID = 1, Brand = "Burton", BrandImage = "/images/burton.jpeg" },
                         new { ID = 2, Brand = "Mark's Brand", BrandImage = "/images/BPowerLogo.png" },
-                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2Logo.png" }
+                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2_1.png" }
                     );
                 });
 

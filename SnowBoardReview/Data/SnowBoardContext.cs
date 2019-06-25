@@ -92,7 +92,7 @@ namespace SnowBoardReview
                {
                    ID = 3,
                    Brand = "K2",
-                   BrandImage = "/images/K2Logo.png"
+                   BrandImage = "/images/K2_1.png"
                });
         }
     }
