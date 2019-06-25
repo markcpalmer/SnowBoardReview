@@ -7,22 +7,17 @@ namespace SnowBoardReview.Models
 {
     public class Snowboard
     {
-        public virtual int ID { get; set; }
-        public virtual string ModelDescription { get; set; }
-        public virtual string ModelName { get; set; }
-        public virtual string ProductImage { get; set; }
+        public int ID { get; set; }
+        public string ModelDescription { get; set; }
+        public string ModelName { get; set; }
+        public string ProductImage { get; set; }
 
         public virtual SnowboardBrand SnowboardBrand { get; set; }
         public int SnowboardBrandID { get; set; }
 
-        public virtual List<SnowboardReview> SnowboardReviews { get; set; }
+        public virtual Review Review { get; set; }
+        public virtual int ReviewID { get; set; }
 
-        //public  Snowboard(string modelDescription, string modelName, string productImage)
-        //{
-        //    ModelDescription = modelDescription;
-        //    ModelName = modelName;
-        //    ProductImage = productImage;
-        //}
 
         public Snowboard()
         {

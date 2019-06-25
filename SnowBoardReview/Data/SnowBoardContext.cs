@@ -12,7 +12,6 @@ namespace SnowBoardReview
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Snowboard> Snowboards { get; set; }
         public DbSet<SnowboardBrand> SnowboardBrands { get; set; }
-        public DbSet<SnowboardReview> SnowboardReviews { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,7 +31,8 @@ namespace SnowBoardReview
                     ModelDescription = "",
                     ModelName = "William",
                     ProductImage = "Shakespeare",
-                    SnowboardBrandID = 1
+                    SnowboardBrandID = 1,
+                    ReviewID = 2,
                 },
                 new Snowboard
                 {
@@ -40,7 +40,8 @@ namespace SnowBoardReview
                     ModelDescription = "blue",
                     ModelName = "x200",
                     ProductImage = "tree",
-                    SnowboardBrandID=2
+                    SnowboardBrandID = 2,
+                    ReviewID = 1
                 },
                 new Snowboard
                 {
@@ -48,59 +49,30 @@ namespace SnowBoardReview
                     ModelDescription = "red",
                     ModelName = "W40",
                     ProductImage = "water",
-                    SnowboardBrandID=2
+                    SnowboardBrandID=2,
+                    ReviewID = 3
                 });
 
             modelBuilder.Entity<Review>().HasData(
                  new Review
                  {
                      ReviewID = 1,
-                    // ProductDescription = "mark",
-                    // ProductName = "take 2",
                      CategoryName = " cool board",
                      UserReview = "This is cool",
-                     //ProductImage = "Pretty",
-
                  },
                new Review
                {
                    ReviewID = 2,
-                 //  ProductDescription = "luis",
-                  // ProductName = "diablo",
                    CategoryName = " latino board",
                    UserReview = "hated it",
-                  // ProductImage = "ok",
-
                },
                 new Review
                 {
                     ReviewID = 3,
-                   // ProductDescription = "matt",
-                   // ProductName = "polar bear",
                     CategoryName = " bear board",
                     UserReview = "Decent yo",
-                   // ProductImage = "decent still",
                 });
 
-            modelBuilder.Entity<SnowboardReview>().HasData(
-               new SnowboardReview
-               {
-                   ID = 1,
-                   ReviewID = 1,
-                   SnowboardID = 1,
-               },
-                new SnowboardReview
-                {
-                    ID = 2,
-                    ReviewID =2,
-                    SnowboardID = 3,
-                },
-                new SnowboardReview
-                {
-                    ID = 3,
-                    ReviewID = 3,
-                    SnowboardID = 2,
-                });
 
             modelBuilder.Entity<SnowboardBrand>().HasData(
                new SnowboardBrand
@@ -113,7 +85,7 @@ namespace SnowBoardReview
                {
                    ID = 2,
                    Brand = "Mark's Brand",
-                   BrandImage = "/images/Marksboard.png"
+                   BrandImage = "/images/BPowerLogo.png"
 
                },
                new SnowboardBrand

@@ -7,11 +7,11 @@ namespace SnowBoardReview.Models
 {
     public class Review
     {
-        public virtual string CategoryName { get; set; }
-        public virtual int ReviewID { get; set; }
-        public virtual string UserReview { get; set; }
+        public string CategoryName { get; set; }
+        public int ReviewID { get; set; }
+        public string UserReview { get; set; }
 
-        public virtual List<SnowboardReview> SnowboardReviews { get; set; }
+        public virtual List<Snowboard> Snowboards { get; set; }
 
         public Review()
         {

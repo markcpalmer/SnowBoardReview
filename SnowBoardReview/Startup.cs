@@ -20,7 +20,6 @@ namespace SnowBoardReview
             services.AddMvc();
             services.AddDbContext<SnowBoardContext>();
             services.AddScoped<IRepository<Review>, ReviewRepository>();
-            services.AddScoped<IRepository<SnowboardReview>, SnowboardReviewRepository>();
             services.AddScoped<IRepository<Snowboard>, SnowboardRepository>();
             services.AddScoped<IRepository<SnowboardBrand>, SnowboardBrandRepository>();
         }
@@ -39,13 +38,13 @@ namespace SnowBoardReview
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Review}/{action=Index}/{id?}");
+                    template: "{controller=SnowboardBrand}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "home",
                     template: "{controller=Review}/{action=Create}/{id?}");
                 routes.MapRoute(
                    name: "Brand",
-                   template: "{controller=SnowBoard}/{action=Brand}/{id?}");
+                   template: "{controller=SnowboardBrand}/{action=Details}/{id?}");
             });
         }
     }
