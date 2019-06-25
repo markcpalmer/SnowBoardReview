@@ -38,7 +38,7 @@ namespace SnowBoardReview.Controllers
         [HttpPost]
         public ActionResult Create(Review review)
         {
-            review.ReviewID = 1;
+            //review.ReviewID = 1;  this is automatically being added.
 
             reviewRepo.Create(review);
 
