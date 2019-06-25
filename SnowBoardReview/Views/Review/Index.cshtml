@@ -4,5 +4,11 @@
 }
 @using SnowBoardReview.Controllers;
 
-<h2>Index</h2>
+<h2>Reviews</h2>
 
+@foreach (var review in Model)
+{
+
+    <p>@review.UserReview</p>
+
+}

@@ -4,12 +4,18 @@
     ViewData["Title"] = "Brand";
     Layout = "_layout";
 }
+@using SnowBoardReview.Controllers;
 
-@foreach (var brand in Model)
+
+@*<h2>@Model.Snowboard[0].</h2>*@
+
+@foreach (var snowboard in Model)
 {
-    @brand.ModelName
+    <a href="/review/Index/@snowboard.ID"><img src="@snowboard.ProductImage" alt="Product Images" /></a>
+    <p>@snowboard.ModelName</p>
+    <p>@snowboard.ModelDescription</p>
 }
 
-    <h2>Brand</h2>
+
 
 
