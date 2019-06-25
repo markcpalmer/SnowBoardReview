@@ -39,7 +39,13 @@ namespace SnowBoardReview
             {
                 routes.MapRoute(
                     name: "default",
+                    template: "{controller=Review}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "home",
                     template: "{controller=Review}/{action=Create}/{id?}");
+                routes.MapRoute(
+                   name: "Brand",
+                   template: "{controller=SnowBoard}/{action=Brand}/{id?}");
             });
         }
     }
