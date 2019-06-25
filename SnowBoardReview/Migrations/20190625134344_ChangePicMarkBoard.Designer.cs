@@ -9,8 +9,8 @@ using SnowBoardReview;
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    [Migration("20190621181930_PotentialBrandFix")]
-    partial class PotentialBrandFix
+    [Migration("20190625134344_ChangePicMarkBoard")]
+    partial class ChangePicMarkBoard
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,12 +28,6 @@ namespace SnowBoardReview.Migrations
 
                     b.Property<string>("CategoryName");
 
-                    b.Property<string>("ProductDescription");
-
-                    b.Property<string>("ProductImage");
-
-                    b.Property<string>("ProductName");
-
                     b.Property<string>("UserReview");
 
                     b.HasKey("ReviewID");
@@ -41,9 +35,9 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Reviews");
 
                     b.HasData(
-                        new { ReviewID = 1, CategoryName = " cool board", ProductDescription = "mark", ProductImage = "Pretty", ProductName = "take 2", UserReview = "This is cool" },
-                        new { ReviewID = 2, CategoryName = " latino board", ProductDescription = "luis", ProductImage = "ok", ProductName = "diablo", UserReview = "hated it" },
-                        new { ReviewID = 3, CategoryName = " bear board", ProductDescription = "matt", ProductImage = "decent still", ProductName = "polar bear", UserReview = "Decent yo" }
+                        new { ReviewID = 1, CategoryName = " cool board", UserReview = "This is cool" },
+                        new { ReviewID = 2, CategoryName = " latino board", UserReview = "hated it" },
+                        new { ReviewID = 3, CategoryName = " bear board", UserReview = "Decent yo" }
                     );
                 });
 
@@ -53,26 +47,28 @@ namespace SnowBoardReview.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BrandName");
-
                     b.Property<string>("ModelDescription");
 
                     b.Property<string>("ModelName");
 
                     b.Property<string>("ProductImage");
 
+                    b.Property<int>("ReviewID");
+
                     b.Property<int>("SnowboardBrandID");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ReviewID");
 
                     b.HasIndex("SnowboardBrandID");
 
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare", SnowboardBrandID = 1 },
-                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree", SnowboardBrandID = 2 },
-                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water", SnowboardBrandID = 2 }
+                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare", ReviewID = 2, SnowboardBrandID = 1 },
+                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree", ReviewID = 1, SnowboardBrandID = 2 },
+                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water", ReviewID = 3, SnowboardBrandID = 2 }
                     );
                 });
 
@@ -84,60 +80,29 @@ namespace SnowBoardReview.Migrations
 
                     b.Property<string>("Brand");
 
+                    b.Property<string>("BrandImage");
+
                     b.HasKey("ID");
 
                     b.ToTable("SnowboardBrands");
 
                     b.HasData(
-                        new { ID = 1, Brand = "Burton" },
-                        new { ID = 2, Brand = "Mark's Brand" },
-                        new { ID = 3, Brand = "K2" }
-                    );
-                });
-
-            modelBuilder.Entity("SnowBoardReview.Models.SnowboardReview", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ReviewID");
-
-                    b.Property<int>("SnowboardID");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ReviewID");
-
-                    b.HasIndex("SnowboardID");
-
-                    b.ToTable("SnowboardReviews");
-
-                    b.HasData(
-                        new { ID = 1, ReviewID = 1, SnowboardID = 1 },
-                        new { ID = 2, ReviewID = 2, SnowboardID = 3 },
-                        new { ID = 3, ReviewID = 3, SnowboardID = 2 }
+                        new { ID = 1, Brand = "Burton", BrandImage = "/images/burton.jpeg" },
+                        new { ID = 2, Brand = "Mark's Brand", BrandImage = "/images/BPowerLogo.png" },
+                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2Logo.png" }
                     );
                 });
 
             modelBuilder.Entity("SnowBoardReview.Models.Snowboard", b =>
                 {
-                    b.HasOne("SnowBoardReview.Models.SnowboardBrand", "SnowboardBrand")
-                        .WithMany("Snowboards")
-                        .HasForeignKey("SnowboardBrandID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SnowBoardReview.Models.SnowboardReview", b =>
-                {
                     b.HasOne("SnowBoardReview.Models.Review", "Review")
-                        .WithMany("SnowboardReviews")
+                        .WithMany("Snowboards")
                         .HasForeignKey("ReviewID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("SnowBoardReview.Models.Snowboard", "Snowboard")
-                        .WithMany("SnowboardReviews")
-                        .HasForeignKey("SnowboardID")
+                    b.HasOne("SnowBoardReview.Models.SnowboardBrand", "SnowboardBrand")
+                        .WithMany("Snowboards")
+                        .HasForeignKey("SnowboardBrandID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
