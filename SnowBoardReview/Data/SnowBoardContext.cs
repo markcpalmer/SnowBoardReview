@@ -29,28 +29,25 @@ namespace SnowBoardReview
                 {
                     ID = 1,
                     ModelDescription = "",
-                    ModelName = "William",
-                    ProductImage = "Shakespeare",
+                    ModelName = "Kaleidoscope",
+                    ProductImage = "/images/BurtonKaleidoscope.png",
                     SnowboardBrandID = 1,
-                    ReviewID = 2,
                 },
                 new Snowboard
                 {
                     ID = 2,
                     ModelDescription = "blue",
                     ModelName = "x200",
-                    ProductImage = "tree",
+                    ProductImage = "/images/MarkBrandX200.png",
                     SnowboardBrandID = 2,
-                    ReviewID = 1
                 },
                 new Snowboard
                 {
                     ID = 3,
                     ModelDescription = "red",
                     ModelName = "W40",
-                    ProductImage = "water",
+                    ProductImage = "/images/MarkBrandW40.jpg",
                     SnowboardBrandID=2,
-                    ReviewID = 3
                 });
 
             modelBuilder.Entity<Review>().HasData(
@@ -59,18 +56,21 @@ namespace SnowBoardReview
                      ReviewID = 1,
                      CategoryName = " cool board",
                      UserReview = "This is cool",
+                     SnowboardID = 1,
                  },
                new Review
                {
                    ReviewID = 2,
                    CategoryName = " latino board",
                    UserReview = "hated it",
+                   SnowboardID =1,
                },
                 new Review
                 {
                     ReviewID = 3,
                     CategoryName = " bear board",
                     UserReview = "Decent yo",
+                    SnowboardID=3,
                 });
 
 
