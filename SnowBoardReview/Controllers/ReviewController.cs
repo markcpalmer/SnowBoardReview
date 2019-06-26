@@ -48,7 +48,7 @@ namespace SnowBoardReview.Controllers
         [HttpGet]
         public ViewResult Delete(int id)
         {
-            ViewBag.ReviewId =id;
+            ViewBag.ReviewId = id;
             return View();
         }
 
