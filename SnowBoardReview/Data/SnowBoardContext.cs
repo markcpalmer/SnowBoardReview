@@ -49,17 +49,31 @@ namespace SnowBoardReview
                     ProductImage = "/images/MarkBrandW40.jpg",
                     SnowboardBrandID = 2,
                 },
-                 new Snowboard {
+                 new Snowboard
+                 {
                      ID = 4,
                      ModelDescription = "It has a shark painted on it! what more is there to say?",
                      ModelName = "Shark",
                      ProductImage = "/images/k2shark.jpg",
                      SnowboardBrandID = 3,
+                 },
+                  new Snowboard
+                  {
+                      ID = 5,
+                      ModelDescription = "The board that put us on the map!! For shredding and back country climbing",
+                      ModelName = "K2 Standard",
+                      ProductImage = "/images/K2board.jpg",
+                      SnowboardBrandID = 3,
+                  },
+                  new Snowboard
+                  {
+                      ID = 6,
+                      ModelDescription = "Customized to your liking!! Shred or backcountry...your choose!!",
+                      ModelName = "Burton Custom",
+                      ProductImage = "/images/burtoncustom2.jpeg",
+                      SnowboardBrandID = 1,
 
-
-
-                 
-                });
+                  });
 
             modelBuilder.Entity<Review>().HasData(
                  new Review
