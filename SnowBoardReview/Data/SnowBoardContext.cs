@@ -67,21 +67,21 @@ namespace SnowBoardReview
                      ReviewID = 1,
                      CategoryName = " cool board",
                      UserReview = "This is cool",
-                     SnowboardID = 1,
+                     BoardID = 1,
                  },
                new Review
                {
                    ReviewID = 2,
                    CategoryName = " latino board",
                    UserReview = "hated it",
-                   SnowboardID =1,
+                   BoardID =1,
                },
                 new Review
                 {
                     ReviewID = 3,
                     CategoryName = " bear board",
                     UserReview = "Decent yo",
-                    SnowboardID=3,
+                    BoardID=3,
                 });
 
 

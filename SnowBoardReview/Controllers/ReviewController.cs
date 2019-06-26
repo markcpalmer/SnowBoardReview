@@ -24,8 +24,9 @@ namespace SnowBoardReview.Controllers
         }
 
         [HttpGet]
-        public ViewResult Create()
+        public ViewResult Create(int id)
         {
+            ViewBag.SnowBoardId = id;
             return View();
         }
 
