@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnowBoardReview;
 
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    partial class SnowBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190624231148_CreateMigration")]
+    partial class CreateMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,20 +28,16 @@ namespace SnowBoardReview.Migrations
 
                     b.Property<string>("CategoryName");
 
-                    b.Property<int>("SnowboardID");
-
                     b.Property<string>("UserReview");
 
                     b.HasKey("ReviewID");
 
-                    b.HasIndex("SnowboardID");
-
                     b.ToTable("Reviews");
 
                     b.HasData(
-                        new { ReviewID = 1, CategoryName = " cool board", SnowboardID = 1, UserReview = "This is cool" },
-                        new { ReviewID = 2, CategoryName = " latino board", SnowboardID = 1, UserReview = "hated it" },
-                        new { ReviewID = 3, CategoryName = " bear board", SnowboardID = 3, UserReview = "Decent yo" }
+                        new { ReviewID = 1, CategoryName = " cool board", UserReview = "This is cool" },
+                        new { ReviewID = 2, CategoryName = " latino board", UserReview = "hated it" },
+                        new { ReviewID = 3, CategoryName = " bear board", UserReview = "Decent yo" }
                     );
                 });
 
@@ -64,10 +62,9 @@ namespace SnowBoardReview.Migrations
                     b.ToTable("Snowboards");
 
                     b.HasData(
-                        new { ID = 1, ModelDescription = "All Mountain, Freestyle- Light, short and flexible", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.jpg", SnowboardBrandID = 1 },
-                        new { ID = 2, ModelDescription = "Freeride, Freestyle- Ideal for backcountry riding.", ModelName = "x200", ProductImage = "/images/MarkBrandX200.png", SnowboardBrandID = 2 },
-                        new { ID = 3, ModelDescription = "Splitboard- Split in half for backcountry climbing.", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 },
-                        new { ID = 4, ModelDescription = "It has a shark painted on it! what more is there to say?", ModelName = "Shark", ProductImage = "/images/k2shark.jpg", SnowboardBrandID = 3 }
+                        new { ID = 1, ModelDescription = "", ModelName = "William", ProductImage = "Shakespeare", SnowboardBrandID = 1 },
+                        new { ID = 2, ModelDescription = "blue", ModelName = "x200", ProductImage = "tree", SnowboardBrandID = 2 },
+                        new { ID = 3, ModelDescription = "red", ModelName = "W40", ProductImage = "water", SnowboardBrandID = 2 }
                     );
                 });
 
@@ -87,17 +84,34 @@ namespace SnowBoardReview.Migrations
 
                     b.HasData(
                         new { ID = 1, Brand = "Burton", BrandImage = "/images/burton.jpeg" },
-                        new { ID = 2, Brand = "Mark's Brand", BrandImage = "/images/BPowerLogo.png" },
-                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2_1.png" }
+                        new { ID = 2, Brand = "Mark's Brand", BrandImage = "/images/Marksboard.png" },
+                        new { ID = 3, Brand = "K2", BrandImage = "/images/K2Logo.png" }
                     );
                 });
 
-            modelBuilder.Entity("SnowBoardReview.Models.Review", b =>
+            modelBuilder.Entity("SnowBoardReview.Models.SnowboardReview", b =>
                 {
-                    b.HasOne("SnowBoardReview.Models.Snowboard", "Snowboard")
-                        .WithMany("Reviews")
-                        .HasForeignKey("SnowboardID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ReviewID");
+
+                    b.Property<int>("SnowboardID");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ReviewID");
+
+                    b.HasIndex("SnowboardID");
+
+                    b.ToTable("SnowboardReviews");
+
+                    b.HasData(
+                        new { ID = 1, ReviewID = 1, SnowboardID = 1 },
+                        new { ID = 2, ReviewID = 2, SnowboardID = 3 },
+                        new { ID = 3, ReviewID = 3, SnowboardID = 2 }
+                    );
                 });
 
             modelBuilder.Entity("SnowBoardReview.Models.Snowboard", b =>
@@ -105,6 +119,19 @@ namespace SnowBoardReview.Migrations
                     b.HasOne("SnowBoardReview.Models.SnowboardBrand", "SnowboardBrand")
                         .WithMany("Snowboards")
                         .HasForeignKey("SnowboardBrandID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SnowBoardReview.Models.SnowboardReview", b =>
+                {
+                    b.HasOne("SnowBoardReview.Models.Review", "Review")
+                        .WithMany("SnowboardReviews")
+                        .HasForeignKey("ReviewID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SnowBoardReview.Models.Snowboard", "Snowboard")
+                        .WithMany("SnowboardReviews")
+                        .HasForeignKey("SnowboardID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
