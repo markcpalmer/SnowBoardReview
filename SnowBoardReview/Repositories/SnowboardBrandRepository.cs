@@ -20,6 +20,10 @@ namespace SnowBoardReview.Repositories
         {
             throw new NotImplementedException();
         }
+       public void Delete(SnowboardBrand obj)
+        {
+            throw new NotImplementedException();
+        }
 
         public IEnumerable<SnowboardBrand> GetAll()
             {

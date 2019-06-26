@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnowBoardReview;
 
 namespace SnowBoardReview.Migrations
 {
     [DbContext(typeof(SnowBoardContext))]
-    partial class SnowBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190626145007_testdeletemigration")]
+    partial class testdeletemigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,22 +26,22 @@ namespace SnowBoardReview.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BoardID");
-
                     b.Property<string>("CategoryName");
+
+                    b.Property<int>("SnowboardID");
 
                     b.Property<string>("UserReview");
 
                     b.HasKey("ReviewID");
 
-                    b.HasIndex("BoardID");
+                    b.HasIndex("SnowboardID");
 
                     b.ToTable("Reviews");
 
                     b.HasData(
-                        new { ReviewID = 1, BoardID = 1, CategoryName = " cool board", UserReview = "This is cool" },
-                        new { ReviewID = 2, BoardID = 1, CategoryName = " latino board", UserReview = "hated it" },
-                        new { ReviewID = 3, BoardID = 3, CategoryName = " bear board", UserReview = "Decent yo" }
+                        new { ReviewID = 1, CategoryName = " cool board", SnowboardID = 1, UserReview = "This is cool" },
+                        new { ReviewID = 2, CategoryName = " latino board", SnowboardID = 1, UserReview = "hated it" },
+                        new { ReviewID = 3, CategoryName = " bear board", SnowboardID = 3, UserReview = "Decent yo" }
                     );
                 });
 
@@ -66,10 +68,7 @@ namespace SnowBoardReview.Migrations
                     b.HasData(
                         new { ID = 1, ModelDescription = "All Mountain, Freestyle- Light, short and flexible", ModelName = "Kaleidoscope", ProductImage = "/images/BurtonKaleidoscope.jpg", SnowboardBrandID = 1 },
                         new { ID = 2, ModelDescription = "Freeride, Freestyle- Ideal for backcountry riding.", ModelName = "x200", ProductImage = "/images/MarkBrandX200.png", SnowboardBrandID = 2 },
-                        new { ID = 3, ModelDescription = "Splitboard- Split in half for backcountry climbing.", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 },
-                        new { ID = 4, ModelDescription = "It has a shark painted on it! what more is there to say?", ModelName = "Shark", ProductImage = "/images/k2shark.jpg", SnowboardBrandID = 3 },
-                        new { ID = 5, ModelDescription = "The board that put us on the map!! For shredding and back country climbing", ModelName = "K2 Standard", ProductImage = "/images/K2board.jpg", SnowboardBrandID = 3 },
-                        new { ID = 6, ModelDescription = "Customized to your liking!! Shred or backcountry...your choose!!", ModelName = "Burton Custom", ProductImage = "/images/burtoncustom2.jpeg", SnowboardBrandID = 1 }
+                        new { ID = 3, ModelDescription = "Splitboard- Split in half for backcountry climbing.", ModelName = "W40", ProductImage = "/images/MarkBrandW40.jpg", SnowboardBrandID = 2 }
                     );
                 });
 
@@ -96,9 +95,9 @@ namespace SnowBoardReview.Migrations
 
             modelBuilder.Entity("SnowBoardReview.Models.Review", b =>
                 {
-                    b.HasOne("SnowBoardReview.Models.Snowboard", "Board")
+                    b.HasOne("SnowBoardReview.Models.Snowboard", "Snowboard")
                         .WithMany("Reviews")
-                        .HasForeignKey("BoardID")
+                        .HasForeignKey("SnowboardID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

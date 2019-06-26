@@ -11,8 +11,8 @@ namespace SnowBoardReview.Models
         public int ReviewID { get; set; }
         public string UserReview { get; set; }
 
-        public virtual Snowboard Snowboard { get; set; }
-        public virtual int SnowboardID { get; set; }
+        public virtual Snowboard Board { get; set; }
+        public int BoardID { get; set; }
 
         public Review()
         {
