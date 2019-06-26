@@ -1,4 +1,4 @@
-﻿@model SnowBoardReview.Models.Review
+﻿ @model SnowBoardReview.Models.Review
 
 @{
     ViewData["Title"] = "Delete";
@@ -29,12 +29,13 @@
             @Html.DisplayNameFor(model => model.Board)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Board.ID)
+            @Html.DisplayFor(model => model.Board.ModelName)
         </dd>
     </dl>
 
     <form asp-action="Delete">
-        <input type="hidden" value="@ViewBag.ReviewId" asp-for="ReviewID" />
+        <input type="hidden" value="@Model.ReviewID" asp-for="ReviewID" />
+        <input type="hidden" value="@Model.BoardID" asp-for="BoardID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

@@ -37,7 +37,7 @@ namespace SnowBoardReview.Controllers
 
             reviewRepo.Create(review);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("../Review/Index/" + review.BoardID);
         }
 
         public ViewResult Index(int Id)
@@ -48,18 +48,19 @@ namespace SnowBoardReview.Controllers
         [HttpGet]
         public ViewResult Delete(int id)
         {
-            ViewBag.ReviewId = id;
-            return View();
+            var model = reviewRepo.GetById(id);
+            // ViewBag.ReviewId = id;
+            return View(model);
         }
 
         [HttpPost]
         public ActionResult Delete(Review review)
         {
             //review.ReviewID = 1;  this is automatically being added.
-
+            int rbid = review.BoardID;
             reviewRepo.Delete(review);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("../Review/Index/" + rbid);
         }
     }
 }
