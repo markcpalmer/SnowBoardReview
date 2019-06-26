@@ -47,7 +47,18 @@ namespace SnowBoardReview
                     ModelDescription = "Splitboard- Split in half for backcountry climbing.",
                     ModelName = "W40",
                     ProductImage = "/images/MarkBrandW40.jpg",
-                    SnowboardBrandID=2,
+                    SnowboardBrandID = 2,
+                },
+                 new Snowboard {
+                     ID = 4,
+                     ModelDescription = "It has a shark painted on it! what more is there to say?",
+                     ModelName = "Shark",
+                     ProductImage = "/images/k2shark.jpg",
+                     SnowboardBrandID = 3,
+
+
+
+                 
                 });
 
             modelBuilder.Entity<Review>().HasData(
