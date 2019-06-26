@@ -11,9 +11,15 @@
 
 @foreach (var snowboard in Model)
 {
-    <a href="/review/Index/@snowboard.ID"><img src="@snowboard.ProductImage" alt="Product Images" /></a>
-    <p>@snowboard.ModelName</p>
-    <p>@snowboard.ModelDescription</p>
+    <a href="/review/Index/@snowboard.ID" class="snowboards">
+        <boardview>
+            <div>
+                <img src="@snowboard.ProductImage" width=65% alt="Product Images" />
+                <p>@snowboard.ModelName</p>
+            </div>
+            <p>@snowboard.ModelDescription</p>
+        </boardview>
+    </a>
 }
 
 
