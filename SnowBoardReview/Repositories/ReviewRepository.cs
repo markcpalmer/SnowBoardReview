@@ -26,14 +26,13 @@ namespace SnowBoardReview.Repositories
 
         public IEnumerable<Review> GetByBrandId(int Id)
         {
-            return db.Reviews.Where(r => r.SnowboardID == Id);
+            return db.Reviews.Where(r => r.BoardID == Id);
         }
 
         public Review GetById(int Id)
         {
             return db.Reviews.Single(r => r.ReviewID == Id);
         }
-
         public void Create(Review review)
         {
             db.Reviews.Add(review);
