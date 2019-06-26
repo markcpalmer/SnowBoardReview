@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SnowBoardReview.Models;
 
 namespace SnowBoardReview.Repositories
 {
@@ -11,8 +12,9 @@ namespace SnowBoardReview.Repositories
         T GetById(int Id);
         IEnumerable<T> GetByBrandId(int Id);
         void Create(T obj);
+        //void Delete(Review review);
 
-        //void Delete(T obj);
+        void Delete(T obj);
 
         //void Update(T obj);
     }

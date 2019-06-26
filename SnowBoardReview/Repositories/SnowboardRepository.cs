@@ -34,5 +34,9 @@ namespace SnowBoardReview.Repositories
         {
             throw new NotImplementedException();
         }
+        public void Delete(Snowboard obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

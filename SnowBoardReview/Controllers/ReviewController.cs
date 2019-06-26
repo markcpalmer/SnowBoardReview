@@ -44,6 +44,21 @@ namespace SnowBoardReview.Controllers
             var model = reviewRepo.GetByBrandId(Id);
             return View(model);
         }
+        [HttpGet]
+        public ViewResult Delete(int id)
+        {
+            ViewBag.ReviewId =id;
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult Delete(Review review)
+        {
+            //review.ReviewID = 1;  this is automatically being added.
+
+            reviewRepo.Delete(review);
+
+            return RedirectToAction("Index");
+        }
     }
 }
