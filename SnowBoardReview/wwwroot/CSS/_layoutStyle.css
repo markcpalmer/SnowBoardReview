@@ -1,5 +1,5 @@
 ﻿*{
-    min-width: 200px;
+
     margin: 0;
     padding: 0;
 }
@@ -68,7 +68,8 @@ nav {
     }
 
 body {
-    background-image: url("/Images/mountainbackground.jpeg");
+    width: 100%;
+    background-image: url("/Images/mountainbackgroundfix.png");
     background-size: cover;
 }
 
