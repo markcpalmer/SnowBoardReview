@@ -4,5 +4,17 @@
 }
 @using SnowBoardReview.Controllers;
 
-<h2>Index</h2>
 
+@foreach (var snowboard in Model)
+{
+    <a href="/review/Index/@snowboard.ID" class="snowboards">
+        <boardview>
+            <div>
+                <img src="@snowboard.ProductImage" width=35% alt="Product Images" />
+                <p>@snowboard.ModelName</p>
+            </div>
+            <p>@snowboard.ModelDescription</p>
+        </boardview>
+    </a>
+    <a href="/review/Create/@snowboard.ID" class="snowboardscreate">Add a review for the @snowboard.ModelName</a>
+}

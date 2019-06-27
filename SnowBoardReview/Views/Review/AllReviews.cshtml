@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SnowBoardReview.Models.Review>
+@{
+    ViewData["Title"] = "AllReviews";
+    Layout = "_layout";
+}
+
+<h1>All Reviews</h1>
+
+@foreach (var rev in Model)
+{
+<revs>
+    <p>
+        <strong>@rev.Board.ModelName</strong>
+        @rev.UserReview
+    </p>
+</revs>
+    
+}
