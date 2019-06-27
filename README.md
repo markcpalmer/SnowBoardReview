@@ -6,15 +6,15 @@ The first step in the process was to setup a .Net Core Web Application from scra
 
 The next step was to determine our story card priority for our sprints through the Grooming process in Agile.
 
-We then added the MVC model for our Category (Snowboard) and our product brands (Burton, K2, and Mark's).  This included adding the Controllers, Models, and Views for our project.
+The MVC model was added for Category (Snowboard) and product brands (Burton, K2, and Mark's).  Folders were added for Controllers, Models, and Views.
 
-Context and Interface were created to seed our database thru SQL. It was critical to ensure that our relationship for our project was correct (One to Many)
+Context and an Interface were created to seed the database using SQL. It was critical to ensure that the relationship for the project was correct (One to Many for this instance).
 
-Models, Controllers, and Views were done correctly and we added HTML and CSS to style our Views.
+HTML and CSS was added to style the Views shown.
 
 CRUD application was then added so the User can Add, Edit and Delete a review while viewing a snowboard.
 
-The final step was to add Tests ( Yes, this should have happened earlier!!) to enure our methods were correct (i.e. Is the program pulling the correct Snowboard ID for a User to add a review).
+The final step included adding Tests to our project( Yes, this should have happened earlier!!) to enure our methods were correct (i.e. Is the program pulling the correct Snowboard ID for a User to add a review).
 
 # End Result
 
