@@ -38,5 +38,10 @@ namespace SnowBoardReview.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void Edit(Snowboard obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -25,6 +25,11 @@ namespace SnowBoardReview.Repositories
             throw new NotImplementedException();
         }
 
+        public void Edit(SnowboardBrand obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<SnowboardBrand> GetAll()
             {
                 return db.SnowboardBrands;

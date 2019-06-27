@@ -23,6 +23,13 @@ namespace SnowBoardReview.Controllers
             return View(model);
         }
 
+        public ViewResult Index(int Id)
+        {
+            var model = reviewRepo.GetByBrandId(Id);
+            return View(model);
+        }
+
+
         [HttpGet]
         public ViewResult Create(int id)
         {
@@ -33,32 +40,44 @@ namespace SnowBoardReview.Controllers
         [HttpPost]
         public ActionResult Create(Review review)
         {
-            //review.ReviewID = 1;  this is automatically being added.
-
             reviewRepo.Create(review);
 
             return RedirectToAction("../Review/Index/" + review.BoardID);
         }
 
-        public ViewResult Index(int Id)
-        {
-            var model = reviewRepo.GetByBrandId(Id);
-            return View(model);
-        }
+
         [HttpGet]
         public ViewResult Delete(int id)
         {
             var model = reviewRepo.GetById(id);
-            // ViewBag.ReviewId = id;
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Delete(Review review)
         {
-            //review.ReviewID = 1;  this is automatically being added.
             int rbid = review.BoardID;
             reviewRepo.Delete(review);
+
+            return RedirectToAction("../Review/Index/" + rbid);
+        }
+
+
+
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            ViewBag.SnowBoardId = id;
+
+            var model = reviewRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Review review)
+        {
+            int rbid = review.BoardID;
+            reviewRepo.Edit(review);
 
             return RedirectToAction("../Review/Index/" + rbid);
         }

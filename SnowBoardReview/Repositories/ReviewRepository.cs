@@ -33,6 +33,7 @@ namespace SnowBoardReview.Repositories
         {
             return db.Reviews.Single(r => r.ReviewID == Id);
         }
+
         public void Create(Review review)
         {
             db.Reviews.Add(review);
@@ -43,10 +44,12 @@ namespace SnowBoardReview.Repositories
             db.Reviews.Remove(review);
             db.SaveChanges(); 
         }
-
+        public void Edit(Review review)
+        {
+            db.Reviews.Update(review);
+            db.SaveChanges();
+        }
 
     }    
 
-
-    
 }
